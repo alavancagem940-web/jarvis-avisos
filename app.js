@@ -27,7 +27,6 @@ function pedir() {
   desenhar(`
     <h1>Jarvis</h1>
     <p>Um toque. O aviso passa a aparecer na tela do iPhone.</p>
-    <p>O iPhone precisa estar no Wi-Fi de casa.</p>
     <button id="ativar" type="button">Ativar avisos</button>
   `);
   document.getElementById("ativar").onclick = ativar;
