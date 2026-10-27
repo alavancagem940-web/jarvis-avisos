@@ -1,0 +1,20 @@
+name: aviso
+on:
+  workflow_dispatch:
+    inputs:
+      texto:
+        description: texto
+        required: true
+        type: string
+permissions:
+  issues: write
+jobs:
+  avisar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: abrir
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          TEXTO: ${{ inputs.texto }}
+        run: gh issue create --title "$TEXTO" --body "@alavancagem940-web"
